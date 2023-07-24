@@ -7,8 +7,8 @@ Assigning a variable 2-variable_load.py and printing the value out
 
 
 def import_variable_load(file):
-    with open(file) as v:
-        new_code = compile(v.read(), file, 'exec')
+    with open(file) as f:
+        new_code = compile(f.read(), file, 'exec')
         namespace = {}
         exec(new_code, namespace)
         return namespace.get('a', None)
