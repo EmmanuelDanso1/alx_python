@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 #Assigning a variable 2-variable_load.py and printing the value out
 #2-variable_load.py
-a = 7
+a = 98
 
 def import_variable_load(file):
     with open(file) as v:
