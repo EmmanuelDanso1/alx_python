@@ -1,0 +1,1 @@
+Learning about python import modules which will foster how python programs run and exceptions to catch errors in a program when necessary
