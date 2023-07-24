@@ -4,7 +4,9 @@ Assigning a variable 2-variable_load.py and printing the value out
 #2-variable_load.py
 """
 a = 98
-def  import_variable_load(file):
+
+
+def import_variable_load(file):
     with open(file) as v:
         new_code = compile(v.read(), file, 'exec')
         namespace = {}
