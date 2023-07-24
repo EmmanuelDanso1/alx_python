@@ -17,5 +17,3 @@ if __name__ == "__main__":
     if add_function is not None:
         result = add_function(a, b)
         print("{} + {} = {}".format(a, b, result))
-    else:
-        print("Function 'add' not found in the file.")
