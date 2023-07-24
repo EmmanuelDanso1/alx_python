@@ -3,8 +3,7 @@
 Assigning a variable 2-variable_load.py and printing the value out
 #2-variable_load.py
 """
-a = 89
-a = -100
+a =  int()
 
 
 def import_variable_load(file):
