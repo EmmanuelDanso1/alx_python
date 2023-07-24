@@ -3,12 +3,12 @@
 Assigning a variable 2-variable_load.py and printing the value out
 #2-variable_load.py
 """
-# a = 0
+a = 98
 
 
-def import_variable_load(file):
-    with open(file) as f:
-        new_code = compile(f.read(), file, 'exec')
+def import_variable_load(variable_load_2):
+    with open(variable_load_2) as f:
+        new_code = compile(f.read(), variable_load_2, 'exec')
         namespace = {}
         exec(new_code, namespace)
         return namespace.get('a', None)
