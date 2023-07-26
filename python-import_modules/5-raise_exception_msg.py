@@ -4,5 +4,5 @@ def raise_exception_msg(message=""):
     try:
         raise ("")
     except Exception as e:
-        print(" ", message)
+        print("",message)
     
