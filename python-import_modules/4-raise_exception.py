@@ -4,4 +4,4 @@ def raise_exception():
     try:
         raise "TypeException"
     except Exception as e:
-        print("An exception raised", e)
+        print("An exception has been raised", e)
