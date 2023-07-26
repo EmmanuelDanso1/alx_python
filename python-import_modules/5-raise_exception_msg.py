@@ -5,3 +5,4 @@ def raise_exception_msg(message=""):
         raise NameError("")
     except NameError as e:
         print("")
+    raise_exception_msg(message="")
