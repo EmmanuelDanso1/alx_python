@@ -2,7 +2,6 @@
 #raising a name exception with a message
 def raise_exception_msg(message=""):
     try:
-        raise ("")
-    except Exception as e:
-        print("",message)
-raise_exception_msg()
+        raise NameError("message")
+    except NameError as e:
+        print("")
