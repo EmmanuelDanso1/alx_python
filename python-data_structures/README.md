@@ -1,0 +1,1 @@
+This is a readme file for data structures in python with list and tuples data types
