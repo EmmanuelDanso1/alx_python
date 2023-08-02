@@ -1,15 +1,41 @@
-#!/usr/bin/python
-class Square:
-    #assuming the size was passed as a valid integer
-    def __init__(self, size):
-        self.__size = size #square class with private instance attribute __size
-    def area(self):
-        return self.__size ** 2 #findong the area of the square
-    def perimeter(self):
-        return 4 * self.__size
-    def get_size(self):
-        return self.__size #using getters to access__size since it is private
-    def set_size(self, current_size):
-        self.__size = current_size #using setters to modify __size
+#!/usr/bin/python3
+"""
+This module defines Square class, which represents a square shape
+Square:
+    A class to create and manipulate square objects
 
-        
+"""
+class Square:
+    """
+    This represent a Square root
+    __size(int): The size of the Square
+
+    Methods:
+        __init__(self, size=0):Initializes a Square instance with a given a size(default is 0)
+        my_print(self):Print the square pattern using '#'
+    """
+    def __init__(self, size=0):
+        """
+        Constructor for Square class
+        Args:
+            __size(int):The size of the (default is 0)
+        """
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = size
+
+    def area(self):
+        return self.__size ** 2 #this to access __size
+
+    def get_size(self):
+        return self.__size #this is to modify the __size
+
+    def set_size(self, value):
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value
+    size = property(get_size, set_size)
