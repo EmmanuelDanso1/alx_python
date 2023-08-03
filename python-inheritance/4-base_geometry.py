@@ -14,8 +14,7 @@ class BaseGeometry:
     This class is designed to be subclassed and extended with specific methods and attributes
     to create more specialized geometric classes.
 
-    Public Instance Method:
-        area(self): Raises an Exception with the message "area() is not implemented".
+
     """
     def area(self):
         """
