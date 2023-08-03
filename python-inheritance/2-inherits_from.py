@@ -15,6 +15,7 @@ def inherits_from(obj, a_class):
         a_class: type - The class to be compared with.
 
     Returns:
-        boolean: True else, False.
+        boolean: True 
+        else, False.
     """
     return isinstance(obj, a_class) and type(obj) is not a_class
