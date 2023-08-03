@@ -3,8 +3,8 @@
 This module defines class BaseGeometry, which chekcs for geometry
     BaseGeometry:
             This checks for geometry-related classes
-Another module which checks for the area using self
-    area(self):
+The area module which checks for the area using self
+    area:
             This checks for area of a specific geometric shape
 """
 class BaseGeometry:
