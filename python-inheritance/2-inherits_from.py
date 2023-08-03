@@ -5,6 +5,8 @@ inherits_from:
             This checks true for instance of a specific object otherwise, false
 """
 def inherits_from(obj, a_class):
+
+
     """
     Check if the object is exactly an instance of the specified class.
 
@@ -16,4 +18,3 @@ def inherits_from(obj, a_class):
         boolean: True if the object is an instance of the specified class,else, False.
     """
     return isinstance(obj, a_class) and type(obj) is not a_class
-
