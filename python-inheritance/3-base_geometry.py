@@ -4,6 +4,8 @@ This module defines class BaseGeometry, which chekcs for geometry
     BaseGeometry:
             This checks for geometry-related classes
 """
+
+
 class BaseGeometry:
     """
     A base class representing the foundation for geometry-related classes.
