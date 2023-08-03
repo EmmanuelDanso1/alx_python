@@ -4,9 +4,9 @@ This module defines a inherits_from, which checks for boolean
 inherits_from:
             This checks true for instance of a specific object otherwise, false
 """
+
+
 def inherits_from(obj, a_class):
-
-
     """
     Check if the object is exactly an instance of the specified class.
 
