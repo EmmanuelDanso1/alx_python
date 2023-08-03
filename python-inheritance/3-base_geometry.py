@@ -5,10 +5,6 @@ This module defines class BaseGeometry, which chekcs for geometry
             This checks for geometry-related classes
 """
 
-
-from collections.abc import Iterable
-
-
 class BaseGeometry:
     """
     A base class representing the foundation for geometry-related classes.
