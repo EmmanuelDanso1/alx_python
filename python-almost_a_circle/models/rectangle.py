@@ -34,6 +34,12 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+        super().__init__(id)
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+
     @property
     def width(self):
         """int: The width of the rectangle."""
@@ -41,103 +47,52 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        """Setting the width of the rectangle."""
+        """Set the width of the rectangle."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
 
-    def area(self):
-        """
-        Calculate and return the area of the rectangle.
+    @property
+    def height(self):
+        """int: The height of the rectangle."""
+        return self.__height
 
-        Returns:
-            int: The area of the rectangle.
-        """
-        return self.width * self.height
+    @height.setter
+    def height(self, value):
+        """Set the height of the rectangle."""
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = value
 
-    def display(self):
-        """
-        Print a visual representation of the rectangle using the character '#'.
-        """
-        for _ in range(self.height):
-            print('#' * self.width)
-    def display(self):
-        """
-        Print a visual representation of the rectangle using the character '#'.
-        Takes into account the x and y coordinates.
-        """
-        for _ in range(self.y):
-            print()
-        for _ in range(self.height):
-            print(' ' * self.x + '#' * self.width)
+    @property
+    def x(self):
+        """int: The x-coordinate of the top-left corner of the rectangle."""
+        return self.__x
 
-    def __str__(self):
-        """
-        Return a string representation of the rectangle.
+    @x.setter
+    def x(self, value):
+        """Set the x-coordinate of the rectangle."""
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = value
 
-        Returns:
-            str: A formatted string containing rectangle information.
-        """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
-    
-    def update(self, *args):
-        """
-        Update the attributes of the rectangle based on the provided arguments.
+    @property
+    def y(self):
+        """int: The y-coordinate of the top-left corner of the rectangle."""
+        return self.__y
 
-        Args:
-            *args: A variable number of arguments:
-                   1st argument: id attribute
-                   2nd argument: width attribute
-                   3rd argument: height attribute
-                   4th argument: x attribute
-                   5th argument: y attribute
-        """
-        if len(args) >= 1:
-            self.id = args[0]
-        if len(args) >= 2:
-            self.width = args[1]
-        if len(args) >= 3:
-            self.height = args[2]
-        if len(args) >= 4:
-            self.x = args[3]
-        if len(args) >= 5:
-            self.y = args[4]
-    def update(self, *args, **kwargs):
-        """
-        Update the attributes of the rectangle based on the provided arguments.
+    @y.setter
+    def y(self, value):
+        """Set the y-coordinate of the rectangle."""
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
 
-        Args:
-            *args: A variable number of arguments:
-                   1st argument: id attribute
-                   2nd argument: width attribute
-                   3rd argument: height attribute
-                   4th argument: x attribute
-                   5th argument: y attribute
-            **kwargs: Key-value pairs where each key represents an attribute
-                      of the instance.
-        """
-        if args:
-            if len(args) >= 1:
-                self.id = args[0]
-            if len(args) >= 2:
-                self.width = args[1]
-            if len(args) >= 3:
-                self.height = args[2]
-            if len(args) >= 4:
-                self.x = args[3]
-            if len(args) >= 5:
-                self.y = args[4]
-        else:
-            for key, value in kwargs.items():
-                if key == 'id':
-                    self.id = value
-                elif key == 'width':
-                    self.width = value
-                elif key == 'height':
-                    self.height = value
-                elif key == 'x':
-                    self.x = value
-                elif key == 'y':
-                    self.y = value
