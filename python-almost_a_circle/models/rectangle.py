@@ -46,3 +46,36 @@ class Rectangle(Base):
             self.__width = value
         else:
             raise ValueError("Width must be a positive integer")
+        
+    @property
+    def height(self):
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        if isinstance(value, int) and value > 0:
+            self.__height = value
+        else:
+            raise ValueError("Height must be a positive integer")
+
+    @property
+    def x(self):
+        return self.__x
+
+    @x.setter
+    def x(self, value):
+        if isinstance(value, int):
+            self.__x = value
+        else:
+            raise ValueError("X must be an integer")
+
+    @property
+    def y(self):
+        return self.__y
+
+    @y.setter
+    def y(self, value):
+        if isinstance(value, int):
+            self.__y = value
+        else:
+            raise ValueError("Y must be an integer")
