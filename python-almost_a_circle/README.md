@@ -1,0 +1,1 @@
+This readme will consist of import modules, getters and setters, JSON etc which forms part of almost a circle project
