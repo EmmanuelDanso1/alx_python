@@ -15,13 +15,11 @@ class Square(Rectangle):
         x (int): The x-coordinate of the top-left corner of the square.
         y (int): The y-coordinate of the top-left corner of the square.
     """
-    def __init__(self, size, width, height, x=0, y=0, id=None):
+    def __init__(self, size, x=0, y=0, id=None):
         """
         Initialize a new instance of the Rectangle class.
 
         Args:
-            width (int): The width of the rectangle
-            height (int): The height of the rectangle
             x (int): The x-coordinate of the top-left corner of the rectangle
             y (int): The y-coordinate of the top-left corner of the rectangle
             id (int): A unique identifier for the instance
@@ -31,3 +29,4 @@ class Square(Rectangle):
 
     def __str__(self):
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+    
