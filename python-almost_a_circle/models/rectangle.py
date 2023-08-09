@@ -41,7 +41,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        """Set the width of the rectangle."""
+        """Setting the width of the rectangle."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -56,3 +56,10 @@ class Rectangle(Base):
             int: The area of the rectangle.
         """
         return self.width * self.height
+
+    def display(self):
+        """
+        Print a visual representation of the rectangle using the character '#'.
+        """
+        for _ in range(self.height):
+            print('#' * self.width)
