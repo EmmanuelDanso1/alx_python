@@ -57,12 +57,12 @@ class Rectangle(Base):
         """
         return self.width * self.height
 
-    #def display(self):
+    def display(self):
         """
         Print a visual representation of the rectangle using the character '#'.
         """
-        #for _ in range(self.height):
-            #print('#' * self.width)
+        for _ in range(self.height):
+            print('#' * self.width)
     def display(self):
         """
         Print a visual representation of the rectangle using the character '#'.
