@@ -36,46 +36,56 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """int: The width of the rectangle"""
+        """int: The width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Set the width of the rectangle"""
-        if isinstance(value, int) and value > 0:
-            self.__width = value
-        else:
-            raise ValueError("Width must be a positive integer")
-        
+        """Set the width of the rectangle."""
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
+
     @property
     def height(self):
+        """int: The height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        if isinstance(value, int) and value > 0:
-            self.__height = value
-        else:
-            raise ValueError("Height must be a positive integer")
+        """Set the height of the rectangle."""
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = value
 
     @property
     def x(self):
+        """int: The x-coordinate of the top-left corner of the rectangle."""
         return self.__x
 
     @x.setter
     def x(self, value):
-        if isinstance(value, int):
-            self.__x = value
-        else:
-            raise ValueError("X must be an integer")
+        """Set the x-coordinate of the rectangle."""
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = value
 
     @property
     def y(self):
+        """int: The y-coordinate of the top-left corner of the rectangle."""
         return self.__y
 
     @y.setter
     def y(self, value):
-        if isinstance(value, int):
-            self.__y = value
-        else:
-            raise ValueError("Y must be an integer")
+        """Set the y-coordinate of the rectangle."""
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
