@@ -57,18 +57,28 @@ class Rectangle(Base):
         """
         return self.width * self.height
 
-    def display(self):
+    #def display(self):
         """
         Print a visual representation of the rectangle using the character '#'.
         """
+        #for _ in range(self.height):
+            #print('#' * self.width)
+    def display(self):
+        """
+        Print a visual representation of the rectangle using the character '#'.
+        Takes into account the x and y coordinates.
+        """
+        for _ in range(self.y):
+            print()
         for _ in range(self.height):
-            print('#' * self.width)
+            print(' ' * self.x + '#' * self.width)
+            
 
-    #def __str__(self):
+    def __str__(self):
         """
         Return a string representation of the rectangle.
 
         Returns:
             str: A formatted string containing rectangle information.
         """
-        #return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
