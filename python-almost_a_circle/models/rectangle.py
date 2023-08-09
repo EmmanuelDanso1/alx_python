@@ -72,13 +72,26 @@ class Rectangle(Base):
             print()
         for _ in range(self.height):
             print(' ' * self.x + '#' * self.width)
-            
 
-    def __str__(self):
+    def update(self, *args):
         """
-        Return a string representation of the rectangle.
+        Update the attributes of the rectangle based on the provided arguments.
 
-        Returns:
-            str: A formatted string containing rectangle information.
+        Args:
+            *args: A variable number of arguments:
+                   1st argument: id attribute
+                   2nd argument: width attribute
+                   3rd argument: height attribute
+                   4th argument: x attribute
+                   5th argument: y attribute
         """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        if len(args) >= 1:
+            self.id = args[0]
+        if len(args) >= 2:
+            self.width = args[1]
+        if len(args) >= 3:
+            self.height = args[2]
+        if len(args) >= 4:
+            self.x = args[3]
+        if len(args) >= 5:
+            self.y = args[4]
