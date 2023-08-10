@@ -24,19 +24,19 @@ def main():
     # Retrieve the URL from the command-line argument
     url = sys.argv[1]
 
-    try:
+    #try:
         # Send a GET request to the specified URL
-        response = requests.get(url)
+    response = requests.get(url)
 
         # Display the body of the response
-        print(response.text)
+    print(response.text)
 
         # Check if the response status code is greater than or equal to 400
-        if response.status_code >= 400:
+    if response.status_code >= 400:
             print("Error code:", response.status_code)
 
-    except requests.exceptions.RequestException as e:
-        print("Request Error:", e)
+    #except requests.exceptions.RequestException as e:
+        #print("Request Error:", e)
 
 if __name__ == "__main__":
     main()
