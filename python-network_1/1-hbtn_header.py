@@ -42,7 +42,7 @@ def main():
                 print("X-Request-Id not found")
         else:
             print("Error:", response.status_code)
-    except requests.exceptions.RequestException as e:
+    except (requests.exceptions.RequestException, requests.exceptions.ConnectionError, requests.exceptions.MaxRetryError) as e:
         print("Request Error:", e)
 
 if __name__ == "__main__":
