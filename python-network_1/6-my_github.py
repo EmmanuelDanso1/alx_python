@@ -39,8 +39,8 @@ def main():
             user_info = response.json()
             user_id = user_info['id']
             print(user_id)
-        #else:
-            #print("Error:", response.status_code)
+        else:
+            print("None")
 
     except requests.exceptions.RequestException as e:
         print("Request Error:", e)
