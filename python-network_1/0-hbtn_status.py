@@ -4,6 +4,7 @@ This module sends request to the server and gets a feedback
 Using the import  to import the requests package.
 """
 import requests
+import json
 #url to fetch the data from the intranet
 
 url = "https://alu-intranet.hbtn.io/status"
@@ -18,7 +19,10 @@ response = requests.get(url)
 """
 if response.status_code ==  200:
     #checks if the data is in Json format
-    data = response.json()
-    print("Body response:")
-    print("\t - type:", type(data))
-    print("\t - content:",data)
+    try:
+        data = response.json()
+        print("Body response:")
+        print("\t - type:", type(data))
+        print("\t - content:",data)
+    except json.JSONDecodeError:
+        print(response.text)
