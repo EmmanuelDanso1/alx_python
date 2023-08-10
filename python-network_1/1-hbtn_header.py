@@ -38,10 +38,10 @@ def main():
         # Check if X-Request-Id header exists in the response
         if x_request_id:
                 print(x_request_id)
-        else:
-                print("X-Request-Id not found")
-    else:
-        print("Error:", response.status_code)
+        #else:
+                #print("X-Request-Id not found")
+    #else:
+        #print("Error:", response.status_code)
     #except (requests.exceptions.RequestException, requests.exceptions.ConnectionError, requests.exceptions.MaxRetryError) as e:
         #print("Request Error:", e)
 
