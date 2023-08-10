@@ -26,22 +26,24 @@ def main():
 
     # Retrieve the URL from the command-line argument
     url = sys.argv[1]
-
+    try:
     # Send a GET request to the specified URL
-    response = requests.get(url)
+        response = requests.get(url)
 
     # Check if the response status code is 200 (OK)
-    if response.status_code == 200:
+        if response.status_code == 200:
         # Retrieve the value of the X-Request-Id header from the response
-        x_request_id = response.headers.get('X-Request-Id')
+            x_request_id = response.headers.get('X-Request-Id')
         
         # Check if X-Request-Id header exists in the response
-        if x_request_id:
-            print("X-Request-Id:", x_request_id)
+            if x_request_id:
+                print("X-Request-Id:", x_request_id)
+            else:
+                print("X-Request-Id not found")
         else:
-            print("X-Request-Id not found")
-    else:
-        print("Error:", response.status_code)
+            print("Error:", response.status_code)
+    except requests.exceptions.RequestException as e:
+        print("Request Error:", e)
 
 if __name__ == "__main__":
     main()
