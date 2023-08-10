@@ -1,0 +1,1 @@
+This readme is a python network that emphasize on how to get feedback from servers and send request to the servers
