@@ -10,18 +10,7 @@ url = "https://alu-intranet.hbtn.io/status"
 
 
 #using Get method to send a get request to server
-response = requests.get(url)
-
-"""
-    using if statement to check if data is in json format
-    and checking if the status code is ok
-"""
 if response.status_code ==  200:
-    #checks if the data is in Json format
-    try:
-        data = response.json()
         print("Body response:")
         print("\t - type:", type(data))
         print("\t - content:",data)
-    except json.JSONDecodeError:
-        print(response.text)
