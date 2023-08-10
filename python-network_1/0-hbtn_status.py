@@ -4,7 +4,6 @@ This module sends request to the server and gets a feedback
 Using the import  to import the requests package.
 """
 import requests
-import json
 #url to fetch the data from the intranet
 
 url = "https://alu-intranet.hbtn.io/status"
