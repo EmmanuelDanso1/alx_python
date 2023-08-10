@@ -38,7 +38,7 @@ def main():
         if response.status_code == 200:
             user_info = response.json()
             user_id = user_info['id']
-            print("GitHub User ID:", user_id)
+            print(user_id)
         else:
             print("Error:", response.status_code)
 
