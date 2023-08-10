@@ -34,16 +34,16 @@ def main():
     # Prepare the data to be sent in the POST request
     data = {'email': email}
 
-    try:
+    #try:
         # Send a POST request to the specified URL with the email data
-        response = requests.post(url, data=data)
+    response = requests.post(url, data=data)
 
         # Display the body of the response
-        print("Response body:")
-        print(response.text)
+        #print("Response body:")
+    print(response.text)
 
-    except requests.exceptions.RequestException as e:
-        print("Request Error:", e)
+    #except requests.exceptions.RequestException as e:
+       # print("Request Error:", e)
 
 if __name__ == "__main__":
     main()
