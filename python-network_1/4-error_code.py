@@ -33,7 +33,7 @@ def main():
 
         # Check if the response status code is greater than or equal to 400
     if response.status_code >= 400:
-            print("Error code:", response.status_code)
+            print(response.status_code)
 
     #except requests.exceptions.RequestException as e:
         #print("Request Error:", e)
