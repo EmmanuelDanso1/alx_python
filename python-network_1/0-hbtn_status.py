@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Using the import  to import the requests package.
-The imported package is used to access data from a URL or any link
+Module to fetch and display the status https://alu-intranet.hbtn.io/status
 """
 import requests
 
