@@ -8,7 +8,7 @@ import MySQLdb  # Import the MySQLdb module for MySQL database interaction
 import sys      # Import the sys module for system-related functionality
 
 
-def list_states(mysql_user, mysql_password, db_name):
+def list_states_starting_with_N(mysql_user, mysql_password, db_name):
         # using try and except handlers to catch errors
     try:
         # Connect to the MySQL server
@@ -42,4 +42,4 @@ if __name__ == "__main__":
     mysql_password = sys.argv[2]
     db_name = sys.argv[3]
     # Caling the list function
-    list_states(mysql_user, mysql_password, db_name)
+    list_states_starting_with_N(mysql_user, mysql_password, db_name)
