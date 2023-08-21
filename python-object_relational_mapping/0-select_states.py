@@ -10,26 +10,26 @@ import sys      # Import the sys module for system-related functionality
 def list_states(mysql_user, mysql_password, db_name):
         # using try and except handlers to catch errors
     try:
-    # Connect to the MySQL server
+        # Connect to the MySQL server
         database = MySQLdb.connect(host="localhost", port=3306, user=mysql_user, 
         passwd=mysql_password, db=db_name)
-    # Create a cursor object to interact
+        # Create a cursor object to interact
         cur = database.cursor()
-    # Construct the SQL query to retrieve states sorted by ID
+        # Construct the SQL query to retrieve states sorted by ID
         query = "SELECT * FROM states ORDER BY states.id ASC"
-    # Execute the query
+        # Execute the query
         cur.execute(query)
-    # Fetching all the rows returned by the query
+        # Fetching all the rows returned by the query
         rows = cur.fetchall()
-    # Display the results
+        # Display the results
         for row in rows:
             print(row)
-    # Close the cursor and database connection
+        # Close the cursor and database connection
         cur.close()
-        database.close() 
+        database.close()
     except MySQLdb.Error as e:
-    # If an error occurs during database interaction, 
-    # print the error and exit
+        # If an error occurs during database interaction, 
+        # print the error and exit
         print("MySQL Error:", e)
         sys.exit(1)
 if __name__ == "__main__":
