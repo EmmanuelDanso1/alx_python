@@ -11,10 +11,9 @@ def list_states(mysql_user, mysql_password, db_name):
         # using try and except handlers to catch errors
     try:
         # Connect to the MySQL server
-        database = MySQLdb.connect(host="localhost", port=3306, user=mysql_user, 
-                                   passwd=mysql_password, db=db_name)
+        db= MySQLdb.connect(host="localhost", port=3306, user=mysql_user, passwd=mysql_password, db=db_name)
         # Create a cursor object to interact
-        cur = database.cursor()
+        cur = db.cursor()
         # Construct the SQL query to retrieve states sorted by ID
         query = "SELECT * FROM states ORDER BY states.id ASC"
         # Execute the query
@@ -26,7 +25,7 @@ def list_states(mysql_user, mysql_password, db_name):
             print(row)
         # Close the cursor and database connection
         cur.close()
-        database.close()
+        db.close()
     except MySQLdb.Error as e:
         # print error if any and exit
         print("MySQL Error:", e)
