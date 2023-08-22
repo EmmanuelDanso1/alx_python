@@ -1,7 +1,7 @@
 """
 This is an object relational mapping project with
 MySQL and Python
-A script that lists all states with a name 
+A script that lists all states with a name
 starting with N (upper N) from the database hbtn_0e_0_usa
 """
 import MySQLdb  # Import the MySQLdb module for MySQL database interaction
@@ -11,11 +11,12 @@ import sys      # Import the sys module for system-related functionality
 def list_states_starting_with_N(mysql_user, mysql_password, db_name):
         # using try and except handlers to catch errors
     try:
-        db = MySQLdb.connect(host="localhost",
-        port=3306,
-        user=mysql_user,
-        passwd=mysql_password,
-        db=db_name)
+        db = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=mysql_user,
+            passwd=mysql_password,
+            db=db_name)
         # Create a cursor object to interact
         cur = db.cursor()
         # Construct the SQL query to retrieve states sorted by N&ID
