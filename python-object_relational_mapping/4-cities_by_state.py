@@ -24,7 +24,12 @@ def list_cities(username, password, db_name):
     Creating and executing
     the SQL query using user input
     """
-    query = "SELECT * FROM cities ORDER BY id ASC"
+    query = query = """
+    SELECT cities.id, cities.name, states.name
+    FROM cities
+    JOIN states ON cities.state_id = states.id
+    ORDER BY cities.id ASC
+    """
     cursor.execute(query)
     # Fetch all matching rows
     rows = cursor.fetchall()
