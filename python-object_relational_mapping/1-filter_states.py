@@ -20,10 +20,7 @@ def list_states_starting_with_N(mysql_user, mysql_password, db_name):
         # Create a cursor object to interact
         cur = db.cursor()
         # Construct the SQL query to retrieve states sorted by N&ID
-        q = (
-            "SELECT * FROM states"
-            "WHERE BINARY name LIKE 'N%'"
-            "ORDER BY states.id ASC")
+        q = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC"
         # Execute the query
         cur.execute(q)
         # Fetching all the rows returned by the query
