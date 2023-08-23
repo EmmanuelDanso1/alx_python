@@ -35,9 +35,8 @@ def list_cities(username, password, db_name):
     cursor.close()
     db.close()
 if __name__ == "__main__":
-    if len(sys.argv) != 5:
+    if len(sys.argv) != 4:
         print("Usage: python script.py mysql_user mysql_password db_name")
-        sys.exit(1)
     else:
         mysql_username = sys.argv[1]
         mysql_password = sys.argv[2]
