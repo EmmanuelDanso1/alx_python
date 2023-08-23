@@ -25,7 +25,7 @@ def display_matching_states(username, password, db_name, state_name):
     Creating and executing
     the SQL query using user input
     """
-    query = "SELECT * FROM states WHERE name='{}' ORDER BY id ASC".format(state_name)
+    query = "SELECT DISTINCT * FROM states WHERE LOWER(name) = LOWER('{}') ORDER BY id ASC".format(state_name)
     cursor.execute(query)
     # Fetch all matching rows
     rows = cursor.fetchall()
