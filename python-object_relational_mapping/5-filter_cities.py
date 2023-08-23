@@ -37,9 +37,12 @@ def list_cities_of_states(username, password, db_name, state_name):
     # Fetch all matching rows
     rows = cursor.fetchall()
     # Display the results
-    for row in rows:
-        print(row)
-    # Close the cursor and connection
+     # Fetch all rows
+    results = cursor.fetchall()
+    
+    # Display the results as a comma-separated string
+    city_names = ", ".join([row[0] for row in results])
+    print(city_names)
     cursor.close()
     db.close()
 if __name__ == "__main__":
