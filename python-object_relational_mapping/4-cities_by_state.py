@@ -5,7 +5,7 @@ values in the states table of hbtn_0e_0_usa
 """
 import sys
 import MySQLdb
-def list_cities(username, password, db_name, state_name):
+def list_cities(username, password, db_name):
     # Establishing a connection to the MySQL server
     db = MySQLdb.connect(
         host="localhost",
