@@ -7,7 +7,7 @@ import sys
 import MySQLdb
 
 
-def list_cities_of_states(username, password, db_name,state_name):
+def list_cities_of_states(username, password, db_name, state_name):
     # Establishing a connection to the MySQL server
     db = MySQLdb.connect(
         host="localhost",
@@ -33,7 +33,7 @@ def list_cities_of_states(username, password, db_name,state_name):
     WHERE states.name = %s
     ORDER BY cities.id ASC
     """
-    cursor.execute(query,(state_name))
+    cursor.execute(query,(state_name,))
     # Fetch all matching rows
     rows = cursor.fetchall()
     # Display the results
