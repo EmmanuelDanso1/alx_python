@@ -29,7 +29,7 @@ if __name__ == "__main__":
     # connection to the MYSQL server
     url = ('mysql+mysqdb://{}:{}@localhost:3306/{}'
            .format(username, password, db_name))
-    #Base.metadata.create_all(engine)
+    # Base.metadata.create_all(engine)
     engine = create_engine(url, pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
