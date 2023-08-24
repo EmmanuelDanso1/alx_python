@@ -20,16 +20,17 @@ if __name__ == "__main__":
     list: list of State object
     """
     if len(sys.argv) != 4:
-        print("Usage: {} <mysql username> <mysql password> <mysql database"
+        print("Usage: {} <mysql username> <mysql password> <mysql database>"
               .format(sys.argv[0]))
         sys.exit(1)
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
     # connection to the MYSQL server
-    engine = create_engine('mysql+mysqdb://{}:{}@localhost:3306/{}'
-                           .format(username, password, db_name))
-    Base.metadata.create_all(engine)
+    url = ('mysql+mysqdb://{}:{}@localhost:3306/{}'
+           .format(username, password, db_name))
+    #Base.metadata.create_all(engine)
+    engine = create_engine(url,)
     Session = sessionmaker(bind=engine)
     session = Session()
     # quering the db to list all state object
