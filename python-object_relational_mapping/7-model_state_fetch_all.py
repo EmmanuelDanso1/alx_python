@@ -20,7 +20,8 @@ if __name__ == "__main__":
     list: list of State object
     """
     if len(sys.argv) != 4:
-        print("Usage: python script.py mysql_user mysql_password db_name")
+        print("Usage: {} <mysql username> <mysql password> <mysql database"
+              .format(sys.argv[0]))
         sys.exit(1)
     username = sys.argv[1]
     password = sys.argv[2]
