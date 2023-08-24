@@ -30,7 +30,7 @@ if __name__ == "__main__":
     url = ('mysql+mysqdb://{}:{}@localhost:3306/{}'
            .format(username, password, db_name))
     #Base.metadata.create_all(engine)
-    engine = create_engine(url,)
+    engine = create_engine(url, pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
     # quering the db to list all state object
