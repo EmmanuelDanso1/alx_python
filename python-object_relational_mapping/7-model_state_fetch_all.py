@@ -25,16 +25,16 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
-    #connection to the MYSQL server
+    # connection to the MYSQL server
     engine = create_engine('mysql+mysqdb://{}:{}@localhost:3306/{}'
                            .format(username, password, db_name ))
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    #quering the db to list all state object
+    # quering the db to list all state object
     states = session.query(State).order_by(State.id).all
-    #displaying the results
+    # displaying the results
     for state in states:
         print("{}:{}".format(state.id, state.name))
-    #closing session
+    # closing session
     session.close()
