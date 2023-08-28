@@ -20,6 +20,8 @@ def hello_hbnb():
     creating a method from the class Flask
     """
     return 'Hello HBNB!'
+
+
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
     return "HBNB"
