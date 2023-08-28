@@ -36,7 +36,7 @@ def c_replace_text(text):
     """
     replacing underscore with text
     """
-    formatted_text = text.replace('_', '')
+    formatted_text = text.replace('_', ' ')
     return "C {}".format(formatted_text)
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
