@@ -13,10 +13,12 @@ app = Flask(__name__)
 using @app.route to map '/' to the url
 """
 @app.route('/', strict_slashes=False)
+
+
 def hello_hbnb():
     """
     creating a method from the class Flask
     """
     return 'Hello HBNB!'
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port = 5000)
+    app.run(host = '0.0.0.0', port = 5000)
