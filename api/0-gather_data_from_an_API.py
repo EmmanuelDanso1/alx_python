@@ -19,7 +19,7 @@ def get_employee_todo_progress(employee_id):
 
     # Format the employee name
     formatted_name = employee_name[:18].ljust(18) if len(employee_name) >= 18 else employee_name.ljust(18)
-    formatted_name = formatted_name.replace("Incorrect", "OK")
+    formatted_name = formatted_name.replace("OK")
 
     # Get employee's TODO list
     todo_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
