@@ -5,8 +5,10 @@ Python script to export data in the CSV format
 """
 
 import csv
+import os
 import requests
 import sys
+
 
 def get_employee_todo_list(employee_id):
     # Defining the base URL for the API
@@ -56,6 +58,9 @@ if __name__ == "__main__":
 
     try:
         employee_id = int(sys.argv[1])
-        get_employee_todo_list(employee_id)
+        if not os.path.exists(f"{employee_id}.csv"):
+            get_employee_todo_list(employee_id)
+        else:
+            print(f"CSV file '{employee_id}.csv' already exists.")
     except ValueError:
         print("Please provide a valid integer for the employee ID.")
